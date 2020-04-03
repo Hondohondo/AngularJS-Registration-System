@@ -85,6 +85,29 @@ ul li a:active
 }
 
 /*///////////////////////////////
+///////////////////////Button*/
+.btn {
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: none;
+  color: #fff;
+  font-size: inherit;
+  font-family: inherit;
+  transition: all .2s;
+  margin-bottom: 1rem;
+
+}
+
+.btn:hover {
+  /*color: red;*/
+  /*background-color: blue;*/
+}
+
+.ng-invalid .btn:hover {
+  background: cornflowerblue;
+}
+
+/*///////////////////////////////
 ///////////////////////Register*/
 .register input, .login input {
   display: block;
@@ -99,6 +122,10 @@ ul li a:active
   border: none;
 }
 
+.login a {
+  /*text-decoration: none;*/
+}
+
 input.ng-invalid.ng-touched {
   border: 1px solid #da3637;
 }
@@ -111,7 +138,10 @@ input.ng-invalid.ng-touched {
   background: gray;
 }
 
+
+
 .error {
   color: red;
   padding-bottom: 1rem;
 }
+
