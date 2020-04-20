@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute', 'firebase']);
 
 myApp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.
@@ -18,6 +18,7 @@ myApp.config(['$routeProvider', function ($routeProvider) {
       redirectTo: '/login'
     });
 }]);
+
 
 //
 // myApp.controller('appController', ['$scope', function ($scope) {

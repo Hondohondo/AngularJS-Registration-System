@@ -1,30 +1,32 @@
 
-myApp.controller('RegistrationController', ['$scope', function ($scope) {
-    // $scope.message = "Welcome to my App";
+myApp.controller('RegistrationController',
+  ['$scope', '$firebase', '$firebaseAuth',
+    function ($scope, $firebase, $firebaseAuth) {
+
+
+ var ref = firebase.database().ref();
+ var auth = $firebaseAuth();
 
   $scope.login = function () {
-      $scope.message = "Welcome" + $scope.user.email;
+      $scope.message = " Welcome " + $scope.user.email;
   };
 
   $scope.register = function () {
-      $scope.message = "Welcome" + $scope.user.firstname;
-  };
 
-}]);
+      auth.$createUserWithEmailAndPassword(
+        $scope.user.email,
+        $scope.user.password
+      ).then(function (regUser) {
+        $scope.message = "Hi " + $scope.user.firstname + ", Thanks for registering";
+      }).catch(function(error) {
+        $scope.message = error.message;
+      }); //createUserWithEmailAndPassword
+  };//register
 
-
-
-
-
-
-
-
-
-
+}]);//Controller
 
 
-
-
+// $scope.message = "Welcome to my App";
 
 
 // myApp.controller('appController', ['$scope', function ($scope) {
